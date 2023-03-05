@@ -1,0 +1,344 @@
+{
+	"info": {
+		"_postman_id": "2d83fb3f-a056-4a6c-98c5-52a56b677341",
+		"name": "SpringSecurity",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "CadastroUsuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"email\": \"julio@gmail.com\",\r\n    \"senha\": \"123teste\",\r\n    \"cargos\": [\r\n        {\r\n            \"cargo\":\"ROLE_ADMINISTRADOR\"\r\n        }\r\n    ]\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuario/cadastro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"cadastro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CadastrarMedicamento",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"nome_medicamento\":\"Loratadina\",\r\n \"nome_laboratorio\":\"Ranbaxy\",\r\n \"dosagem\":\"10mg\",\r\n \"desc_medicamento\":\"Este medicamento é indicado para o alívio dos sintomas associados com rinite alérgica\",\r\n \"preco_unitario\":\"10.81\",\r\n \"tipo_medicamento\":\"Venda Livre\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/medicamentos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"medicamentos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listarMedicamentos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/medicamentos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"medicamentos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListarMedicamentosPorID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/medicamentos/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"medicamentos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeletarMedicamento",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/medicamentos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"medicamentos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AtualizarMedicamento",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"id\": 2,\r\n            \"nome_medicamento\": \"Loratadina Alterado\",\r\n            \"nome_laboratorio\": \"Ranbaxy\",\r\n            \"dosagem\": \"10mg\",\r\n            \"desc_medicamento\": \"Este medicamento é indicado para o alívio dos sintomas associados com rinite alérgica\",\r\n            \"preco_unitario\": 10.81,\r\n            \"tipo_medicamento\": \"Venda Livre\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/medicamentos/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"medicamentos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CadastrarFarmacia",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"razao_social\": \"Cia latino americana de medicamentos\",\r\n    \"cnpj\": \"84.683.481/0001-77 \",\r\n    \"nome_fantasia\": \"Preço Popular Joinville\",\r\n    \"email\": \"sac@precopopular.com.br\",\r\n    \"telefone\":\"4799999999\",\r\n    \"celular\": \"47999999999\",\r\n    \"endereco\": {\r\n        \"cep\": \"89201300\",\r\n        \"complemento\":\"\",\r\n        \"numero\":620,\r\n        \"latitude\":\"1\",\r\n        \"longitude\":\"80000\"\r\n    \r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/farmacia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"farmacia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarFarmacias",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/farmacia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"farmacia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeletarFarmacia",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/farmacia/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"farmacia",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarUmaFarmacia",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/farmacia/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"farmacia",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar Farmacia",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":2,\r\n    \"razao_social\": \"Cia latino americana de medicamentos\",\r\n    \"cnpj\": \"84.683.481/0001-77 \",\r\n    \"nome_fantasia\": \"Preço Popular Joinville\",\r\n    \"email\": \"sac@precopopular.com.br\",\r\n    \"telefone\":\"4799999999\",\r\n    \"celular\": \"47999999999\",\r\n    \"endereco\": {\r\n        \"cep\": \"89201300\",\r\n        \"complemento\":\"\",\r\n        \"numero\":620,\r\n        \"latitude\":\"1\",\r\n        \"longitude\":\"80000\"\r\n    \r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/farmacia/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"farmacia",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
